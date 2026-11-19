@@ -100,7 +100,7 @@ FastAPI 后端
 
 前端负责展示和交互，后端负责 Agent 执行、任务状态与持久化。确认和取消等操作通过 HTTP 提交，进展通过 WebSocket 推送；页面刷新后从后端查询历史，接上当前任务。
 
-<details>
+<details open>
 <summary>完整任务时序图：提交、规划、确认、执行与历史恢复</summary>
 
 ```mermaid
@@ -176,10 +176,9 @@ sequenceDiagram
     end
     Note over UI,DB: 第 21～24 步在执行期间也会发生；刷新不会重新提交任务
 ```
-
+</details>
 用户可以修订计划或取消任务。异常和超时会结束对应任务；联网搜索次数耗尽时，停止新增搜索，继续基于已有证据整理结果。
 
-</details>
 
 ## 技术栈
 
